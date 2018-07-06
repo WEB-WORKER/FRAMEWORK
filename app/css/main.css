@@ -1,0 +1,128 @@
+html,
+body {
+  background-color: #fff;
+  font-size: 17px;
+}
+#pull {
+  height: 40px;
+  cursor: pointer;
+}
+.header__nav {
+  width: 100%;
+  font-size: 11pt;
+  font-family: 'PT Sans', Arial, sans-serif;
+  font-weight: bold;
+  position: relative;
+}
+.header__nav_ul {
+  padding: 0;
+  margin: 0 auto;
+  height: 40px;
+  text-align: center;
+}
+.header__nav_item {
+  display: inline-flex;
+}
+.header__nav_link {
+  color: #3ab3f8;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 40px;
+}
+.header__nav_link:hover,
+.header__nav_link:active {
+  color: #0780c5;
+}
+.pull {
+  display: none;
+}
+/*Стили для экранов 600px и меньше*/
+@media only screen and (max-width: 600px) {
+  .header__nav {
+    border-bottom: 0;
+    text-align: center;
+  }
+  .header__nav_ul {
+    display: none;
+    height: auto;
+  }
+  .pull {
+    display: flex;
+    background-color: #3ab3f8;
+    width: 100%;
+    position: relative;
+  }
+  .pull:after {
+    content: " ";
+    background: url('img/nav-icon.png') no-repeat;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+  .pull-active:after {
+    content: " ";
+    background: url('img/nav-icon2.png') no-repeat;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+  .header__nav_item {
+    display: flex;
+    justify-content: center;
+    float: none;
+    width: 100%;
+  }
+}
+.left-menu {
+  display: inline-flex;
+  vertical-align: top;
+  min-width: 100px;
+}
+.left-menu_item,
+.section1_item {
+  list-style: none;
+}
+.left-menu_item_link,
+.section1_item_link {
+  text-decoration: none;
+  color: #363636;
+}
+.left-menu_item_link:hover,
+.section1_item_link:hover {
+  color: #3ab3f8;
+}
+.sections {
+  display: inline-flex;
+  justify-content: center;
+  width: 80%;
+}
+.sections_wrapper {
+  display: flex!;
+}
+.section1_ul {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+}
+.section1_item {
+  flex: 1 1 calc(3.33%);
+  /* отнимем margin и скажем растягиваться */
+  margin: 5px;
+  box-sizing: border-box;
+  /* чтобы внутренний отступ не влиял когда там будет текст... */
+  min-width: 170px;
+  /* мин. ширина блока, чтобы переносились на другой ряд */
+  padding: 10px 20px;
+  text-align: center;
+}
+.section1_item_img {
+  width: 100%;
+}
+.section1_item_button {
+  text-align: center;
+}
