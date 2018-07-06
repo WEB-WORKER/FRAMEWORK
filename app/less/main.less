@@ -113,7 +113,7 @@ html, body {
 	width: 80%;
 }
 .sections_wrapper{
-	display: flex!;
+	// display: flex!;
 }
 .section1_ul{
 	display: flex;
@@ -126,7 +126,7 @@ html, body {
 	box-sizing:border-box; /* чтобы внутренний отступ не влиял когда там будет текст... */
 	min-width:170px; /* мин. ширина блока, чтобы переносились на другой ряд */	
 	padding:10px 20px; text-align:center;
-	text-align: center;
+	text-align: center;	
 	}
 .section1_item_img{
 	width: 100%;
@@ -134,5 +134,45 @@ html, body {
 .section1_item_button{
 	text-align: center;
 }
+//accordion
+.section2{
 
+}
+.accordion{
+   min-height: 825px;   
+   background-size: cover;
+}
+.accordion__back{
+    padding: 90px 0 90px 0;
+}
+.accordion__desc-head{
+    margin-bottom: 80px;
+}
+.accordion__desc-title{
+      text-align: center;
+ }
+.accordion__desc-wrap{
+   margin-left:80px;
+}
+.accordion__desc-item{
+     list-style-type: none;
+     margin-bottom: 40px;
+     cursor: pointer;
+}
+.parent_active{
+    
+}
+.accordion__desc-minhead.active{
+    
+}
+.accordion__desc-minhead{
+  text-decoration: none;  
+  position: relative;
+  }
+
+.accordion__description{
+    display: none;
+    margin-left: 30px;
+    max-width: 530px; /*Чтобы секции не съезжали и содержимое тега не вылезало */
+}
 

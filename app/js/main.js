@@ -21,7 +21,26 @@ $(document).ready(function(){
         		}
     		});
 		});
-
+        //accordion
+        $('.accordion__desc-minhead.active').next().show();
+		$('.accordion__desc-minhead').click(function () {
+		var
+			minhead = $('.accordion__desc-minhead'),
+			desc = $('.accordion__desc-minhead').next();
+		
+		if ($(this).hasClass('active')) {
+			$(this).removeClass('active');
+			$(this).parent().removeClass('parent_active');
+			desc.slideUp();
+		} 
+		else { 
+			minhead.removeClass('active');
+			minhead.parent().removeClass('parent_active');
+			desc.slideUp();
+			$(this).addClass('active').next().slideDown();
+			$(this).parent().addClass('parent_active');
+		}
+		});
 
 		
 
