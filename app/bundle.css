@@ -73,6 +73,10 @@ display: block;
 .clearfix: after{
 clear: both;
 }*/
+.leftpossections {
+  margin-left: 80px;
+}
+
 html,
 body {
   background-color: #fff;
@@ -166,10 +170,14 @@ body {
     float: none;
     width: 100%;
   }
+
+  .left-menu {
+    display: none;
+  }
 }
 
 .left-menu {
-  display: inline-flex;
+  position: absolute;
   vertical-align: top;
   min-width: 100px;
 }
@@ -191,9 +199,9 @@ body {
 }
 
 .sections {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
-  width: 80%;
+  width: 100%;
 }
 
 .section1_ul {
@@ -222,25 +230,12 @@ body {
   text-align: center;
 }
 
-.accordion {
-  min-height: 825px;
-  background-size: cover;
-}
-
-.accordion__back {
-  padding: 90px 0 90px 0;
-}
-
 .accordion__desc-head {
   margin-bottom: 80px;
 }
 
 .accordion__desc-title {
   text-align: center;
-}
-
-.accordion__desc-wrap {
-  margin-left: 80px;
 }
 
 .accordion__desc-item {
@@ -257,8 +252,51 @@ body {
 .accordion__description {
   display: none;
   margin-left: 30px;
-  max-width: 530px;
+  max-width: 700px;
   /*Чтобы секции не съезжали и содержимое тега не вылезало */
+}
+
+.tabs {
+  max-width: 700px;
+}
+
+.tabs__controls {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  list-style-type: none;
+}
+
+.tabs__controls-item.active {
+  color: #fff;
+}
+
+.tabs__controls-item.active .tabs__control-link {
+  color: #ffffff;
+  background-color: #3ab3f8;
+}
+
+.tabs__control-link {
+  padding: 5px 30px 5px 30px;
+  margin: 0 10px 0 10px;
+  border: 1px solid #ffffff;
+  color: #3ab3f8;
+  width: 100px;
+  text-decoration: none;
+  line-height: 40px;
+}
+
+.tabs__control-link:hover {
+  border: 1px solid #3ab3f8;
+}
+
+.tabs__item {
+  list-style-type: none;
+  display: none;
+}
+
+.tabs__item.active {
+  display: block;
 }
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 

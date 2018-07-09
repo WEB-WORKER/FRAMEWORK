@@ -42,13 +42,42 @@ $(document).ready(function(){
 		}
 		});
 
-		
+		//tabs
+		$('.tabs__control-link').on('click', function(e){
+			e.preventDefault();
+
+			var item = $(this).closest('.tabs__controls-item'),
+			    contentItem = $('.tabs__item'),
+				itemPosition = item.index();
+			
+			contentItem.eq(itemPosition)
+				 .add(item)				 
+				 .addClass('active')
+				 .siblings()
+				 .removeClass('active');
+		    
+		    
+
+			// item.addClass('active')
+			// 	.siblings()
+			// 	.removeClass('active');
+
+
+            // Метод № 2
+			// item.addClass('active')
+			// 	.siblings()
+			// 	.removeClass('active');
+			// 	var tab = $(this).attr('href');
+			// 	console.log(tab);
+			// 	var nottab = $('.tabs__item').siblings();
+			// 	nottab.css({'display': 'none'});
+			// 	$(tab).fadeIn(400);
+		});
+
+
 
 	
-});
-
-// 
-//end jQuery
+});//end jQuery
 
 
 

@@ -4,7 +4,17 @@
 @black:  #363636;
 @creme: #f5f5f5;
 @grey: #747474;
+@white: #ffffff;
 
+// .section1, 
+// .accordion{
+// 	display: none;
+// }
+
+//mixins
+.leftpossections{
+	margin-left: 80px;
+}
 
 html, body {
   background-color: #fff;
@@ -16,6 +26,7 @@ html, body {
 	cursor: pointer;
 }
 
+//menu
 .header__nav {
 	width: 100%;
 	font-size: 11pt;
@@ -87,11 +98,14 @@ html, body {
 		float: none;
 		width: 100%;		
 	}
+	.left-menu{
+		display: none;
+	}
 }
 
 ////////content//////////
 .left-menu{
-	display: inline-flex;
+	position: absolute;
 	vertical-align: top;
 	min-width: 100px;
 }
@@ -108,12 +122,9 @@ html, body {
 	}
 }
 .sections{
-	display: inline-flex;
+	display: flex;
 	justify-content: center;
-	width: 80%;
-}
-.sections_wrapper{
-	// display: flex!;
+	width: 100%;	
 }
 .section1_ul{
 	display: flex;
@@ -134,17 +145,8 @@ html, body {
 .section1_item_button{
 	text-align: center;
 }
-//accordion
-.section2{
 
-}
-.accordion{
-   min-height: 825px;   
-   background-size: cover;
-}
-.accordion__back{
-    padding: 90px 0 90px 0;
-}
+//accordion
 .accordion__desc-head{
     margin-bottom: 80px;
 }
@@ -152,15 +154,12 @@ html, body {
       text-align: center;
  }
 .accordion__desc-wrap{
-   margin-left:80px;
+ 	// .leftpossections;
 }
 .accordion__desc-item{
      list-style-type: none;
      margin-bottom: 40px;
      cursor: pointer;
-}
-.parent_active{
-    
 }
 .accordion__desc-minhead.active{
     
@@ -173,6 +172,47 @@ html, body {
 .accordion__description{
     display: none;
     margin-left: 30px;
-    max-width: 530px; /*Чтобы секции не съезжали и содержимое тега не вылезало */
+    max-width: 700px; /*Чтобы секции не съезжали и содержимое тега не вылезало */
 }
 
+//tabs
+.tabs{
+	max-width: 700px;	
+}
+.tabs__controls{	
+	display: inline-flex;
+	justify-content: center;
+	width: 100%;
+	list-style-type: none;	
+}
+.tabs__controls-item{
+	&.active{
+		color: #fff;
+		.tabs__control-link{
+			color: @white;
+			background-color: @color;
+		}		
+	}	
+}
+.tabs__control-link{	
+	padding: 5px 30px 5px 30px;
+	margin: 0 10px 0 10px;
+	border: 1px solid @white;
+	color: @color;
+	width: 100px;	
+	text-decoration: none;
+	line-height: 40px;
+	&:hover{
+		border: 1px solid @color;
+	}
+}
+.tabs__list{
+	// .leftpossections;
+}
+.tabs__item{	
+	list-style-type: none;
+	display: none;
+		&.active{
+			display: block;
+		}
+}
