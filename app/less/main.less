@@ -7,7 +7,7 @@
 @white: #ffffff;
 
 // .section1, 
-// .accordion{
+// .tabs{
 // 	display: none;
 // }
 
@@ -146,38 +146,12 @@ html, body {
 	text-align: center;
 }
 
-//accordion
-.accordion__desc-head{
-    margin-bottom: 80px;
-}
-.accordion__desc-title{
-      text-align: center;
- }
-.accordion__desc-wrap{
- 	// .leftpossections;
-}
-.accordion__desc-item{
-     list-style-type: none;
-     margin-bottom: 40px;
-     cursor: pointer;
-}
-.accordion__desc-minhead.active{
-    
-}
-.accordion__desc-minhead{
-  text-decoration: none;  
-  position: relative;
-  }
 
-.accordion__description{
-    display: none;
-    margin-left: 30px;
-    max-width: 700px; /*Чтобы секции не съезжали и содержимое тега не вылезало */
-}
 
 //tabs
 .tabs{
-	max-width: 700px;	
+	max-width: 700px;
+	margin-bottom: 50px;	
 }
 .tabs__controls{	
 	display: inline-flex;
@@ -206,13 +180,35 @@ html, body {
 		border: 1px solid @color;
 	}
 }
-.tabs__list{
-	// .leftpossections;
-}
 .tabs__item{	
 	list-style-type: none;
 	display: none;
 		&.active{
 			display: block;
 		}
+}
+//accordeon
+.accordeon{
+	width: 700px;
+}
+.accordeon__list{
+	display: block;	
+}
+.accordeon__item{	
+	
+}
+.accordeon__item,
+.accordeon__inner-item{
+	list-style-type: none;
+}
+.accordeon__trigger,
+.accordeon__inner-link{	
+	text-decoration: none;
+	color: @black;
+	&:hover{
+		color: @color;
+	}
+}
+.accordeon__inner{
+	display: none;
 }

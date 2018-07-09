@@ -129,29 +129,9 @@ body {
 .section1_item_button {
   text-align: center;
 }
-.accordion__desc-head {
-  margin-bottom: 80px;
-}
-.accordion__desc-title {
-  text-align: center;
-}
-.accordion__desc-item {
-  list-style-type: none;
-  margin-bottom: 40px;
-  cursor: pointer;
-}
-.accordion__desc-minhead {
-  text-decoration: none;
-  position: relative;
-}
-.accordion__description {
-  display: none;
-  margin-left: 30px;
-  max-width: 700px;
-  /*Чтобы секции не съезжали и содержимое тега не вылезало */
-}
 .tabs {
   max-width: 700px;
+  margin-bottom: 50px;
 }
 .tabs__controls {
   display: inline-flex;
@@ -184,4 +164,26 @@ body {
 }
 .tabs__item.active {
   display: block;
+}
+.accordeon {
+  width: 700px;
+}
+.accordeon__list {
+  display: block;
+}
+.accordeon__item,
+.accordeon__inner-item {
+  list-style-type: none;
+}
+.accordeon__trigger,
+.accordeon__inner-link {
+  text-decoration: none;
+  color: #363636;
+}
+.accordeon__trigger:hover,
+.accordeon__inner-link:hover {
+  color: #3ab3f8;
+}
+.accordeon__inner {
+  display: none;
 }

@@ -50,30 +50,37 @@ $(document).ready(function(){
 			    contentItem = $('.tabs__item'),
 				itemPosition = item.index();
 			
-			contentItem.eq(itemPosition)
+			contentItem.eq(itemPosition)			     
 				 .add(item)				 
 				 .addClass('active')
 				 .siblings()
-				 .removeClass('active');
-		    
-		    
+				 .removeClass('active');			
 
-			// item.addClass('active')
-			// 	.siblings()
-			// 	.removeClass('active');
-
-
-            // Метод № 2
-			// item.addClass('active')
-			// 	.siblings()
-			// 	.removeClass('active');
-			// 	var tab = $(this).attr('href');
-			// 	console.log(tab);
-			// 	var nottab = $('.tabs__item').siblings();
-			// 	nottab.css({'display': 'none'});
-			// 	$(tab).fadeIn(400);
 		});
 
+		//accordeon
+		$('.accordeon__trigger').on('click', function(e){
+			e.preventDefault();
+
+			var $this =$(this),
+				item = $this.closest('.accordeon__item'),
+				list = $this.closest('.accordeon__list'),
+				items = list.find('.accordeon__item'),
+				content = item.find('.accordeon__inner'),
+				otherContent = list.find('.accordeon__inner'),
+				duration = 300;
+
+			if(!item.hasClass('active')){
+				items.removeClass('active');
+				item.addClass('active');
+
+				otherContent.stop(true, true).slideUp(duration);
+				content.stop(true, true).slideDown(duration);
+			} else {
+				content.stop(true, true).slideUp(duration);
+				item.removeClass('active');
+			}
+		})
 
 
 	
