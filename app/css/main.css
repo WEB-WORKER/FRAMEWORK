@@ -158,9 +158,14 @@ body {
 .tabs__control-link:hover {
   border: 1px solid #3ab3f8;
 }
+.tabs__list {
+  min-height: 100px;
+  position: relative;
+  background-color: #ffffff;
+}
 .tabs__item {
-  list-style-type: none;
   display: none;
+  list-style-type: none;
 }
 .tabs__item.active {
   display: block;

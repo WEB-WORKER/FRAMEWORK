@@ -21,41 +21,21 @@ $(document).ready(function(){
         		}
     		});
 		});
-        //accordion
-        $('.accordion__desc-minhead.active').next().show();
-		$('.accordion__desc-minhead').click(function () {
-		var
-			minhead = $('.accordion__desc-minhead'),
-			desc = $('.accordion__desc-minhead').next();
-		
-		if ($(this).hasClass('active')) {
-			$(this).removeClass('active');
-			$(this).parent().removeClass('parent_active');
-			desc.slideUp();
-		} 
-		else { 
-			minhead.removeClass('active');
-			minhead.parent().removeClass('parent_active');
-			desc.slideUp();
-			$(this).addClass('active').next().slideDown();
-			$(this).parent().addClass('parent_active');
-		}
-		});
-
-		//tabs
+        //tabs
 		$('.tabs__control-link').on('click', function(e){
 			e.preventDefault();
 
 			var tabControls = $(this).closest('.tabs__controls-item'),
 			    contentItem = $('.tabs__item'),
-				itemPosition = tabControls.index();
+			    list = $('.tabs__list'),
+				itemPosition = tabControls.index(),				
+				thisContentItemHeight;
 			
 			contentItem.eq(itemPosition)			     
 				 .add(tabControls)				 
 				 .addClass('active')
 				 .siblings()
-				 .removeClass('active');			
-
+				 .removeClass('active');
 		});
 
 		//accordeon

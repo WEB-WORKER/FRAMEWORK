@@ -6,8 +6,7 @@
 @grey: #747474;
 @white: #ffffff;
 
-// .section1, 
-// .tabs{
+// .section1{
 // 	display: none;
 // }
 
@@ -180,13 +179,19 @@ html, body {
 		border: 1px solid @color;
 	}
 }
-.tabs__item{	
-	list-style-type: none;
-	display: none;
+.tabs__list{
+	min-height: 100px;
+	position: relative;
+	background-color: @white;
+}
+.tabs__item{		
+	display: none;	
+	list-style-type: none;		
 		&.active{
 			display: block;
 		}
 }
+
 //accordeon
 .accordeon{
 	width: 690px;
