@@ -166,7 +166,7 @@ body {
   display: block;
 }
 .accordeon {
-  width: 700px;
+  width: 690px;
 }
 .accordeon__list {
   display: block;
@@ -174,16 +174,43 @@ body {
 .accordeon__item,
 .accordeon__inner-item {
   list-style-type: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-.accordeon__trigger,
-.accordeon__inner-link {
+.accordeon__trigger {
+  padding: 5px 30px 5px 30px;
   text-decoration: none;
   color: #363636;
+  border: 1px solid #ffffff;
 }
-.accordeon__trigger:hover,
+.accordeon__trigger:hover {
+  color: #3ab3f8;
+  border: 1px solid #3ab3f8;
+}
+.accordeon__trigger.active {
+  background-color: #3ab3f8;
+  color: #ffffff;
+  border: 1px solid #3ab3f8;
+}
+.accordeon__inner-link {
+  padding: 5px 30px 5px 30px;
+  text-decoration: none;
+  color: #363636;
+  border: 1px solid #ffffff;
+}
 .accordeon__inner-link:hover {
   color: #3ab3f8;
+  border: 1px solid #3ab3f8;
 }
-.accordeon__inner {
+.accordeon__inner-link.active {
+  background-color: #3ab3f8;
+  color: #ffffff;
+  border: 1px solid #3ab3f8;
+}
+.accordeon__inner,
+.accordeon__inner-content {
   display: none;
+}
+.accordeon__inner-content.active {
+  display: block;
 }

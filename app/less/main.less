@@ -189,7 +189,7 @@ html, body {
 }
 //accordeon
 .accordeon{
-	width: 700px;
+	width: 690px;
 }
 .accordeon__list{
 	display: block;	
@@ -200,15 +200,48 @@ html, body {
 .accordeon__item,
 .accordeon__inner-item{
 	list-style-type: none;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
-.accordeon__trigger,
-.accordeon__inner-link{	
+.accordeon__trigger{
+	padding: 5px 30px 5px 30px;
 	text-decoration: none;
-	color: @black;
+	color: @black;	
+	border: 1px solid @white;
 	&:hover{
 		color: @color;
+		border: 1px solid @color;
+	}
+	&.active{
+		background-color: @color;
+		color: @white;
+		border: 1px solid @color;
 	}
 }
-.accordeon__inner{
+.accordeon__inner-link{	
+	padding: 5px 30px 5px 30px;
+	text-decoration: none;
+	color: @black;	
+	border: 1px solid @white;
+	&:hover{
+		color: @color;
+		border: 1px solid @color;
+	}
+	&.active{
+		background-color: @color;
+		color: @white;
+		border: 1px solid @color;
+	}
+}
+.accordeon__inner, .accordeon__inner-content{
 	display: none;
 }
+.accordeon__inner-content{	
+	&.active{
+		display: block;		
+		}		
+}
+
+
+
+//slider

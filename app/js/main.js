@@ -46,12 +46,12 @@ $(document).ready(function(){
 		$('.tabs__control-link').on('click', function(e){
 			e.preventDefault();
 
-			var item = $(this).closest('.tabs__controls-item'),
+			var tabControls = $(this).closest('.tabs__controls-item'),
 			    contentItem = $('.tabs__item'),
-				itemPosition = item.index();
+				itemPosition = tabControls.index();
 			
 			contentItem.eq(itemPosition)			     
-				 .add(item)				 
+				 .add(tabControls)				 
 				 .addClass('active')
 				 .siblings()
 				 .removeClass('active');			
@@ -62,15 +62,22 @@ $(document).ready(function(){
 		$('.accordeon__trigger').on('click', function(e){
 			e.preventDefault();
 
-			var $this =$(this),
-				item = $this.closest('.accordeon__item'),
-				list = $this.closest('.accordeon__list'),
+			var link = $(this),				
+				item = link.closest('.accordeon__item'),
+				list = link.closest('.accordeon__list'),
+				links = list.find('.accordeon__trigger'),
 				items = list.find('.accordeon__item'),
 				content = item.find('.accordeon__inner'),
 				otherContent = list.find('.accordeon__inner'),
 				duration = 300;
 
+			if (link.hasClass('active')){
+				link.removeClass('active');
+			}
+			
 			if(!item.hasClass('active')){
+				links.removeClass('active');
+				link.addClass('active');
 				items.removeClass('active');
 				item.addClass('active');
 
@@ -80,9 +87,30 @@ $(document).ready(function(){
 				content.stop(true, true).slideUp(duration);
 				item.removeClass('active');
 			}
-		})
+		});
 
+		$('.accordeon__inner-link').on('click', function(e){
+			e.preventDefault();
 
+			var $this = $(this),			    
+			    innerContent = $this.siblings(),
+			    innerLink = $this;
+			    list = $this.closest('.accordeon__list'),
+			    innerContents = list.find('.accordeon__inner-content'),
+			    otherLinks = list.find('.accordeon__inner-link'),
+			    duration = 300;
+
+			    if (innerLink.hasClass('active')){
+					innerLink.removeClass('active');
+					innerContents.stop(true, true).slideUp(duration).removeClass('active');
+				} else {
+					otherLinks.removeClass('active');
+			    	innerLink.addClass('active');
+			    	innerContents.stop(true, true).slideUp(duration).removeClass('active');
+			    	innerContent.stop(true, true).slideDown(duration).addClass('active');
+				}		    
+
+		});
 	
 });//end jQuery
 
